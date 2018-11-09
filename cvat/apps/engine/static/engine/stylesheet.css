@@ -1,10 +1,18 @@
-/*
- * Copyright (C) 2018 Intel Corporation
+/*copyright (C) 2018 Intel Corporation
  *
  * SPDX-License-Identifier: MIT
  */
 
 /* ----------------------- Classes ----------------------- */
+.column {
+	float: left;
+	width: 50%;
+}
+.column2{
+	float: left;
+	width: 30%;
+}	
+
 .playerButton {
     fill: #09c;
     stroke-width: 2px;
@@ -389,14 +397,14 @@
 }
 
 #taskAnnotationCenterPanel {
-    width: 83%;
+    width: 60%;
     height: 100%;
     float: left;
 }
 
 #taskAnnotationRightPanel {
     height: 100%;
-    width: 15%;
+    width: 38%;
     float: left;
     margin: 0px 10px;
 }
@@ -503,7 +511,7 @@
 }
 
 #playerPanel {
-    width: 100%;
+    width: 150%;
     height: 5%;
 }
 
@@ -533,7 +541,8 @@
 #playerProgress::-webkit-slider-runnable-track {
     height: 70%;
     cursor: pointer;
-    background: #09c;
+    /*background: #09c;*/
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0.15, #09c),color-stop(0.15, #94A14E));
     border-radius: 3px;
     border: 1px solid #010101;
 }

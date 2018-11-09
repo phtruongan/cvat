@@ -395,7 +395,50 @@
     <button class="h2 regular" id="sidePanelLabelsButton" style="width: 50%">Labels</button>
 </div>
 <div id="taskAnnotationRightPanel">
-    <div id="uiContent"> </div>
+    <div id="uiContent"> 
+    	<button id="nextStepButton" class="regular h2" style="width: 30%; margin-top:5px; margin-right:5px;float:right;"> Next Step </button>
+    	<button id="previousStepButton" class="regular h2" style="width: 30%; margin-top:5px;margin-right:5px;float:right;"> Previous Step </button>
+	<div id="stepIdx" style="float:left; font-size: 30px;font-weight:bold"> Step 0</div>
+	<div id="workingStepInfo" style="margin-top:5px;float:left;"> 
+		<div id="periodTime" style="float:left">
+			<div id="startTime" style="float:left;font-size:20px;font-weight:bold"> Start</div>
+			<br/>
+			<div id="stopTime" style="float:left;font-size:20px;font-weight:bold"> Stop </div>
+		</div>	
+		<div id="completeInfo" class="row" style="margin-top:50px">
+			<div id="objName" class="column2" stype="margin-left:5px"> Object <br/> 
+				<input type="text" name="example" list="exampleList1">
+					<datalist id="exampleList1">
+					<option value="A">
+					<option value="B">
+					</datalist>
+				</input>
+			</div>
+			<div id="positionSelect" class="column2" style="margin-left:5px"> Position <br/>
+				<input type="text" name="example" list="exampleList2">
+					<datalist id="exampleList2">
+					<option value="A">
+					<option value="B">
+					</datalist>
+				</input>
+			</div>	
+			<div id="previousState" class="column2" stype= "margin-left:5px"> Previous state <br/>
+				<input id="nameCompletion" type="text" name="example" /> <br/>
+				<div style="font-weight:bold">includes</div> <br/>
+				<div id="componentInfo"> Objects1, Object2</div>
+			</div>
+		</div>
+		<br/>
+		<div id="imageSlot" style="margin-top:100px; float:right;">
+			<img class="banner" src="//notrealdomain1.com/banner.png"/>
+		</div>
+		<div id="Mark completion" style="margin-top:150px; float:left"> 
+			Mark the completion state on the frame <br/>
+    			<button id="startMark" class="regular h2" style="width: 30%; margin-top:10px; margin-left:5px;float:left;"> Start </button>
+    			<button id="finishMark" class="regular h2" style="width: 30%; margin-top:10px;margin-left:10px;float:left;"> Crop </button>
+		</div>
+	</div>
+    </div>
     <div id="labelsContent" class="hidden"> </div>
     <div id="trackManagement">
         <button id="createShapeButton" class="regular h2" style="width: 80%;"> Create Shape </button>

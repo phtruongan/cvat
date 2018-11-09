@@ -88,6 +88,11 @@ def create_task(request):
                 with open(path, 'wb') as upload_file:
                     for chunk in data_file.chunks():
                         upload_file.write(chunk)
+        
+        fileWrite = open("An.txt", "w")
+        fileWrite.write(source_paths+"\n")
+        fileWrite.write(target_paths+"\n")
+        fileWrite.close()
 
         params['SOURCE_PATHS'] = source_paths
         params['TARGET_PATHS'] = target_paths
