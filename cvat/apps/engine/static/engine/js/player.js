@@ -852,6 +852,50 @@ class PlayerView {
 
         this._progressUI['0'].value = frames.current - frames.start;
 
+	// AN add the code here for change color of the scrollbar progressUI based on the file URL get by get/task/<task:id>/segment
+	 // task id that.
+	var points = [];
+	var fileURL = `get/task/${playerModel._tid}/segment`; 
+	readTxt.call(this,fileURL);
+	var lenPoints = points.length;
+	var i =0;
+	/*var slider = $('#playerProgress');
+	var stringFinal="";
+	var colorsVal = ["#00ff00","#ff0000"];
+	var curVal = 0.0;
+	for(;i < lenPoints;)
+	{
+		// 
+		//draw progressUI here
+		//
+		curVal = curVal + (points[i+1] - points[i]) * 1.0 / 8800;
+		stringFinal = stringFinal + '-webkit-gradient(linear, left top, right top, ' + 'color-stop('+ curVal +',' + colorsVal[(i/2)%2] + '), color-stop(' + curVal + ', rgba(0,0,0,0)))';
+		i+=2;
+		if(i < lenPoints)
+		{
+			stringFinal = stringFinal + ",";	
+		}
+	}
+	slider.css('background-image', stringFinal);
+	function readTxt(file){
+		var rawFile = new XMLHttpRequest();
+		rawFile.open("GET", file, false);
+		rawFile.onreadystatechange = function()
+		{
+			if(rawFile.readyState === 4)
+			{
+				if(rawFile.status === 200 || rawFile.status == 0 )
+				{
+					var allText = rawFile.responseText;
+					var tmpPoints = allText.split(" ");
+					points.push(parseInt(tmpPoints[0]));
+					points.push(parseInt(tmpPoints[1]));
+					alert(allText);
+				}
+			}
+		}
+		rawFile.send(null);
+	}*/
         for (let obj of [this._playerBackgroundUI, this._playerContentUI, this._playerGridUI]) {
             obj.css('width', image.width);
             obj.css('height', image.height);

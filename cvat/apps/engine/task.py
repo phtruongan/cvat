@@ -147,9 +147,14 @@ def get_frame_path(tid, frame):
     """Read corresponding frame for the task"""
     db_task = models.Task.objects.get(pk=tid)
     path = _get_frame_path(frame, db_task.get_data_dirname())
-
     return path
-
+"""
+def get_annotation_path(tid):
+    """Read corresponding segmentaiton result for the task"""
+    db_task = models.Task.objects.get(pk=tid)
+    path = _get_annotation_path(db_task.get_annotation_dirname())
+    return path
+"""
 def get(tid):
     """Get the task as dictionary of attributes"""
     db_task = models.Task.objects.get(pk=tid)
@@ -373,6 +378,14 @@ def _get_frame_path(frame, base_dir):
         path = os.path.join(base_dir, path)
 
     return path
+
+"""
+def _get_annotation_path(frame, base_dir):
+    path = "segments.txt"
+    if base_dir:
+        path = os.path.join(base_dir, path)
+    return path
+"""
 
 def _parse_labels(labels):
     parsed_labels = {}

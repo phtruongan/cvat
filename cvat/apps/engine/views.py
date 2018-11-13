@@ -135,6 +135,18 @@ def get_frame(request, tid, frame):
         slogger.task[tid].error("cannot get frame #{}".format(frame), exc_info=True)
         return HttpResponseBadRequest(str(e))
 
+# AN's implementation on reading the data from segmentation
+"""@login_required
+@permission_required('engine.view_task', rais_exception=True)
+def get_segments(request, tid):
+    """Stream video segmentation results"""
+    try:
+        path = os.path.realpath(task.get_annotation_path(tid))
+        return sendfile(request, path)
+    except Exception as e:
+        slogger.task[tid].error("cannot get segment files", exc_info=True)
+        return HttpResponseBadRequest(str(e))
+"""
 @login_required
 @permission_required('engine.delete_task', raise_exception=True)
 def delete_task(request, tid):

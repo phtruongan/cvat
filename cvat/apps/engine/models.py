@@ -62,7 +62,10 @@ class Task(models.Model):
 
     def get_data_dirname(self):
         return os.path.join(self.path, "data")
-
+    
+    # An for annotation dir
+    """ def get_annotation_dirname(self):
+        return os.path.join(self.path, "annotation")"""
     def get_dump_path(self):
         name = re.sub(r'[\\/*?:"<>|]', '_', self.name)
         return os.path.join(self.path, "{}.dump".format(name))

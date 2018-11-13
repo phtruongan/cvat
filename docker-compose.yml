@@ -6,6 +6,12 @@
 version: "2.3"
 
 services:
+        #  rcnn:
+        #container_name: rcnn_sandwich
+        #image: rcnnimg
+        #volumes:
+        #- rcnn_data:/data/
+        #- cvat_data:/frame/
   cvat_db:
     container_name: cvat_db
     image: postgres:10.3-alpine
@@ -54,9 +60,10 @@ services:
       - cvat_data:/home/django/data
       - cvat_keys:/home/django/keys
       - cvat_logs:/home/django/logs
-
+        #- rcnn_data:/home/django/annotation
 volumes:
   cvat_db:
   cvat_data:
   cvat_keys:
   cvat_logs:
+          # rcnn_data:

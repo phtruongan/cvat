@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.dispatch_request),
     path('create/task', views.create_task),
     path('get/task/<int:tid>/frame/<int:frame>', views.get_frame),
+    #path('get/task/<int:tid>/segment', views.get_segments),
     path('check/task/<int:tid>', views.check_task),
     path('delete/task/<int:tid>', views.delete_task),
     path('update/task/<int:tid>', views.update_task),
